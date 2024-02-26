@@ -1,5 +1,5 @@
 /*
- * The classes Square and Circle must implement this interface.
+ * The classes shapes.Square and shapes.Circle must implement this interface.
  */
 public interface Area
 {
