@@ -1,4 +1,4 @@
-/*
+package src;/*
  * The classes Cube, Sphere, Cylinder, and Glome must implement this interface.
  */
 

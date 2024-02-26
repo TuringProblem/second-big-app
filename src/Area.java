@@ -1,3 +1,5 @@
+package src;
+
 /*
  * The classes shapes.Square and shapes.Circle must implement this interface.
  */
