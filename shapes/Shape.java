@@ -1,17 +1,9 @@
 package shapes;
 
-public class Shape {
+abstract public class Shape {
     protected String name;
-    Shape() {
-
-    }
-    Shape(String name) {
-        this.name = name;
-    }
-    public void setName(String stringName) {
-        name = stringName;
-    }
-    public String getName() {
-        return name;
-    }
+    Shape() { name = ""; }
+    Shape(String name) { this.name = name; }
+    public void setName(String stringName) { name = stringName; }
+    public String getName() { return name; }
 }

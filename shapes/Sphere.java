@@ -1,16 +1,13 @@
 package shapes;
 
-public class Sphere {
+import src.Volume;
 
-    public Sphere() {
+public class Sphere extends Circle implements Volume {
 
+    public Sphere() { super(); }
+    Sphere(double radius, String name){
+        super(radius, name);
     }
-    Sphere(double r, String n){
-        ;
-    }
-
-    //return the volume of the glome
-    public double getVolume() {
-        return 0;
-    }
+    @Override
+    public double volume() { return ((double) 4 / 3) * Math.PI * Math.pow(getRadius(), 3); }
 }

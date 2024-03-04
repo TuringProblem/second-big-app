@@ -3,21 +3,18 @@ package shapes;
 import src.Area;
 
 public class Circle extends Shape implements Area {
-    private double r;
+    private double radius;
 
-    Circle(double r, String name){
+    Circle() {
+        super();
+        radius = 0;
+    }
+    public Circle(double radius, String name){
         super(name);
-        this.r = r;
+        this.radius = radius;
     }
-    public void setRadius(double r) {
-        this.r = r;
-    }
-
-    public double getRadius() {
-        return r;
-    }
+    public void setRadius(double radius) { this.radius = radius; }
+    public double getRadius() { return radius; }
     @Override
-    public double getArea() {
-       return Math.PI * Math.sqrt(getRadius());
-    }
+    public double area() { return Math.PI * Math.pow(getRadius(), 2); }
 }

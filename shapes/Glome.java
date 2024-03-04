@@ -1,21 +1,12 @@
 package shapes;
 import  src.Volume;
 public class Glome extends Sphere implements Volume {
-    private double r;
-    private String n;
 
     /**
-     *
-     * @see sphere -> need to come back and fix this constructors.
+     * @see  -> need to come back and fix this constructors.
      */
-    public Glome () {
-        double r = 0;
-        String n = "";
-
-    }
-    public Glome(double r, String n){
-        super(r, n);
-    }
-
-
+    public Glome () { super(); }
+    public Glome(double radius, String name){ super(radius, name);}
+    @Override
+    public double volume() { return 0.5 * (Math.pow(Math.PI, 2) * Math.pow(getRadius(), 4)); }
 }
