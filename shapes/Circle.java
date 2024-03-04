@@ -4,8 +4,7 @@ import src.Area;
 
 public class Circle extends Shape implements Area {
     private double radius;
-
-    Circle() {
+    public Circle() {
         super();
         radius = 0;
     }
