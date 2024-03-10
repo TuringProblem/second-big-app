@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47fd3b8f-a8d3-4e58-ae69-d91ec3f33730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/blobs/version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/second-big-app/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/second-big-app/.idea/copilot/chatSessions/00000000000.xd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/second-big-app/.idea/copilot/chatSessions/blobs/version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/second-big-app/.idea/copilot/chatSessions/xd.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/MainLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/second-big-app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second-big-app/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/second-big-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second-big-app/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/second-big-app/src/main/MainProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/second-big-app/src/main/MainProject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MainLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainLogic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MainProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainProject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +40,7 @@
     &quot;Application.MainProject.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Mac-setup&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -118,6 +106,7 @@
       <workItem from="1710045829331" duration="113000" />
       <workItem from="1710045955109" duration="108000" />
       <workItem from="1710046074969" duration="900000" />
+      <workItem from="1710108253861" duration="1380000" />
     </task>
     <servers />
   </component>

@@ -4,6 +4,13 @@ import src.Area;
 import src.Volume;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * @author Override
+ * @since
+ * @see <a href="GitHub.com/TuringProblem">GitHub Profile</a>
+ */
+
 public class MainLogic {
     ArrayList<Shape> shapes = new ArrayList<>();
     Circle CIRCLE = new Circle();
@@ -12,7 +19,6 @@ public class MainLogic {
     Glome GLOME = new Glome();
     Sphere SPHERE = new Sphere();
     Square SQUARE = new Square();
-
     Scanner KEYBOARD = new Scanner(System.in);
 
 
@@ -22,14 +28,32 @@ public class MainLogic {
         System.out.println(PROMPT);
         String response = KEYBOARD.nextLine().toLowerCase();
         switch (response) {
-            case "circle" ->createCircle();
-            case "cube" -> createCube();
-            case "cynlinder" -> createCylinder();
-            case "glome" -> createGlome();
-            case "sphere" -> createSphere();
-            case "square" -> createSquare();
+            case "circle" -> {
+                createCircle();
+                printArea(() -> CIRCLE.area());
             }
-        System.out.println(shapes.getFirst());
+            case "cube" -> {
+                createCube();
+                printVolume(() -> CUBE.volume());
+            }
+            case "cynlinder" -> {
+                createCylinder();
+                printVolume(() -> CYLINDER.volume());
+            }
+            case "glome" -> {
+                createGlome();
+                printVolume(() -> GLOME.volume());
+            }
+            case "sphere" -> {
+                createSphere();
+                printArea(() -> SPHERE.area());
+            }
+            case "square" -> {
+                createSquare();
+                printArea(() -> SQUARE.area());
+            }
+            }
+
     }
 
 

@@ -1,21 +1,14 @@
 package src.main;
 
-import shapes.Circle;
-import shapes.Cylinder;
-import shapes.Shape;
-import shapes.Square;
-import src.Area;
-import src.Volume;
-
-import java.util.ArrayList;
-import java.util.Scanner;
-
+/**
+ * @author Override
+ * @since 03/10/2024 @18:25
+ * @see <a href="GitHub.com/TuringProblem">GitHub Profile</a>
+ */
 public class MainProject {
     public static void main(String[] args) {
     MainLogic main = new MainLogic();
     main.logic();
-        // printArea(() -> Math.PI * Math.pow(radius, 2));
-
     }
 
 }
