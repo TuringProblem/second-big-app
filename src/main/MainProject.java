@@ -1,5 +1,4 @@
 package src.main;
-
 /**
  * @author Override
  * @since 03/10/2024 @18:25
@@ -10,8 +9,4 @@ public class MainProject {
     MainLogic main = new MainLogic();
     main.logic();
     }
-
 }
-
-
-

@@ -4,13 +4,11 @@ import src.Area;
 import src.Volume;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
  * @author Override
  * @since
  * @see <a href="GitHub.com/TuringProblem">GitHub Profile</a>
  */
-
 public class MainLogic {
     ArrayList<Shape> shapes = new ArrayList<>();
     Circle CIRCLE = new Circle();
@@ -20,8 +18,6 @@ public class MainLogic {
     Sphere SPHERE = new Sphere();
     Square SQUARE = new Square();
     Scanner KEYBOARD = new Scanner(System.in);
-
-
     public void logic() {
         final String PROMPT = "Choose a shape: \nie [Circle, Cube, Cylinder, Glome, Shape, Sphere, Square]\nEnter a Shape: ";
 
@@ -52,10 +48,24 @@ public class MainLogic {
                 createSquare();
                 printArea(() -> SQUARE.area());
             }
+
             }
+    }
+    public void logic(ArrayList<Shape> shapes) {
 
     }
 
+    public double noResponse(boolean value) {
+        try {
+            if (value) {
+                System.out.println();
+                logic(shapes);
+            }
+        } catch(Exception e) {
+            System.out.println("Invalid output!");
+        }
+        return 0.0;
+    }
 
     public void createCircle() {
         double radius = radiusQuestion();
@@ -92,8 +102,16 @@ public class MainLogic {
     }
 
     public double radiusQuestion(){
-        System.out.println("Enter a raidus: ");
-        return KEYBOARD.nextDouble();
+        System.out.println("Would you like to add a radius?\n[Y/N]: ");
+        String response = KEYBOARD.nextLine().toLowerCase();
+        if (response.equals("y")) {
+            System.out.println("Enter a raidus: ");
+            return KEYBOARD.nextDouble();
+        } else if (response.equals("n")) {
+            return noResponse(true);
+        }
+        System.out.println("Invalid Answer!");
+        return 0.0;
     }
 
     public double sideQuestion() {
@@ -105,6 +123,5 @@ public class MainLogic {
         return KEYBOARD.nextDouble();
     }
     static void printArea(Area object) { System.out.println(object.area()); }
-
     static void printVolume(Volume object) { System.out.println(object.volume()); }
 }
