@@ -16,4 +16,9 @@ public class Circle extends Shape implements Area {
     public double getRadius() { return radius; }
     @Override
     public double area() { return Math.PI * Math.pow(getRadius(), 2); }
+    @Override
+    public void writeOutput() {
+        super.writeOutput();
+        System.out.printf("Radius: %d\nArea: %d",getRadius(), area());
+    }
 }

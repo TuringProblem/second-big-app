@@ -45,21 +45,7 @@ public class MainLogic {
 
             }
     }
-    public void logic(ArrayList<Shape> shapes) {
 
-    }
-
-    public double noResponse(boolean value) {
-        try {
-            if (value) {
-                System.out.println();
-                logic(shapes);
-            }
-        } catch(Exception e) {
-            System.out.println("Invalid output!");
-        }
-        return 0.0;
-    }
 
     public void createCircle() {
         double radius = radiusQuestion();
@@ -88,6 +74,7 @@ public class MainLogic {
         shapes.add(new Square(sides, "Square"));
     }
 
+
     public double radiusQuestion(){
         System.out.println("Would you like to add a radius?\n[Y/N]: ");
         String response = KEYBOARD.nextLine().toLowerCase();
@@ -109,6 +96,22 @@ public class MainLogic {
         System.out.println("Enter the height: ");
         return KEYBOARD.nextDouble();
     }
+    public void logic(ArrayList<Shape> shapes) {
+
+    }
+
+    public double noResponse(boolean value) {
+        try {
+            if (value) {
+                System.out.println();
+                logic(shapes);
+            }
+        } catch(Exception e) {
+            System.out.println("Invalid output!");
+        }
+        return 0.0;
+    }
+
     static void printArea(Area object) { System.out.println(object.area()); }
     static void printVolume(Volume object) { System.out.println(object.volume()); }
 }
