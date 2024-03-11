@@ -6,7 +6,8 @@ package src.main;
  */
 public class MainProject {
     public static void main(String[] args) {
-    MainLogic main = new MainLogic();
-    main.logic();
+
+        MainLogic main = new MainLogic();
+        main.logic();
     }
 }

@@ -11,12 +11,6 @@ import java.util.Scanner;
  */
 public class MainLogic {
     ArrayList<Shape> shapes = new ArrayList<>();
-    Circle CIRCLE = new Circle();
-    Cube CUBE = new Cube();
-    Cylinder CYLINDER = new Cylinder();
-    Glome GLOME = new Glome();
-    Sphere SPHERE = new Sphere();
-    Square SQUARE = new Square();
     Scanner KEYBOARD = new Scanner(System.in);
     public void logic() {
         final String PROMPT = "Choose a shape: \nie [Circle, Cube, Cylinder, Glome, Shape, Sphere, Square]\nEnter a Shape: ";
@@ -26,27 +20,27 @@ public class MainLogic {
         switch (response) {
             case "circle" -> {
                 createCircle();
-                printArea(() -> CIRCLE.area());
+                printArea(() -> );
             }
             case "cube" -> {
                 createCube();
-                printVolume(() -> CUBE.volume());
+                printVolume(() -> );
             }
             case "cynlinder" -> {
                 createCylinder();
-                printVolume(() -> CYLINDER.volume());
+                printVolume(() -> );
             }
             case "glome" -> {
                 createGlome();
-                printVolume(() -> GLOME.volume());
+                printVolume(() -> );
             }
             case "sphere" -> {
                 createSphere();
-                printArea(() -> SPHERE.area());
+                printArea(() -> );
             }
             case "square" -> {
                 createSquare();
-                printArea(() -> SQUARE.area());
+                printArea(() -> );
             }
 
             }
@@ -69,36 +63,29 @@ public class MainLogic {
 
     public void createCircle() {
         double radius = radiusQuestion();
-        CIRCLE.setRadius(radius);
-        shapes.add(new Circle(CIRCLE.getRadius(), "Circle"));
+        shapes.add(new Circle(radius, "Circle"));
     }
 
     public void createCube() {
         double sides = sideQuestion();
-        CUBE.setSide(sides);
-        shapes.add(new Cube(CUBE.getSide(), "cube"));
+        shapes.add(new Cube(sides, "cube"));
     }
     public void createCylinder() {
         double radius = radiusQuestion();
         double height = heightQuestion();
-        CYLINDER.setRadius(radius);
-        CYLINDER.setHeight(height);
-        shapes.add(new Cylinder(CYLINDER.getRadius(), "Cylinder", CYLINDER.getHeight()));
+        shapes.add(new Cylinder(radius, "Cylinder", height));
     }
     public void createGlome() {
         double radius = radiusQuestion();
-        GLOME.setRadius(radius);
-        shapes.add(new Glome(GLOME.getRadius(), "Glome"));
+        shapes.add(new Glome(radius, "Glome"));
     }
     public void createSphere() {
         double raidus = radiusQuestion();
-        SPHERE.setRadius(raidus);
-        shapes.add(new Sphere(SPHERE.getRadius(), "Sphere"));
+        shapes.add(new Sphere(raidus, "Sphere"));
     }
     public void createSquare() {
         double sides = sideQuestion();
-        SQUARE.setSide(sides);
-        shapes.add(new Square(SQUARE.getSide(), "Square"));
+        shapes.add(new Square(sides, "Square"));
     }
 
     public double radiusQuestion(){
