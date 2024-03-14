@@ -2,85 +2,63 @@ package src.main;
 import shapes.*;
 import src.Area;
 import src.Volume;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Supplier;
 public class MainLogic {
-    ArrayList<Shape> shapes = new ArrayList<>();
-    Circle CIRCLE = new Circle();
-    Cube CUBE = new Cube();
-    Cylinder CYLINDER = new Cylinder();
-    Glome GLOME = new Glome();
-    Sphere SPHERE = new Sphere();
-    Square SQUARE = new Square();
-
     Scanner KEYBOARD = new Scanner(System.in);
+    public enum ShapeType{
+        TWO_DIMENSIONAL("Two Dimensional"),
+        THREE_DIMENSIONAL("Three Dimensional");
+        final String dimensions;
+        ShapeType(String dimensions){this.dimensions = dimensions;}
+    }
+    private final ShapeType twoD = ShapeType.TWO_DIMENSIONAL;
+    private final ShapeType threeD = ShapeType.THREE_DIMENSIONAL;
 
 
     public void logic() {
+        /**
+         * Using Supplier<T> interface -> functional interface from java.util.function library
+         * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Java 8 Api</a>
+         */
+        Supplier<Double> radiusPrompt = () -> {
+            System.out.println("Enter a Radius: ");
+            return KEYBOARD.nextDouble();
+        };
+        Supplier<Double> heightPrompt = () -> {
+            System.out.println("Enter a Height: ");
+            return KEYBOARD.nextDouble();
+        };
         final String PROMPT = "Choose a shape: \nie [Circle, Cube, Cylinder, Glome, Shape, Sphere, Square]\nEnter a Shape: ";
-
         System.out.println(PROMPT);
         String response = KEYBOARD.nextLine().toLowerCase();
         switch (response) {
-            case "circle" ->createCircle();
-            case "cube" -> createCube();
-            case "cynlinder" -> createCylinder();
-            case "glome" -> createGlome();
-            case "sphere" -> createSphere();
-            case "square" -> createSquare();
+            case "circle" -> {
+                double userRadius = radiusPrompt.get();
+                Circle myCircle = new Circle(userRadius, "Circle");
+                myCircle.writeOutput();
+                printArea(myCircle::area);
             }
-        System.out.println(shapes.getFirst());
+            case "cube" -> {
+
+            }
+            case "cylinder" -> {
+
+            }
+            case "glome" -> {
+
+            }
+            case "" -> {
+
+            }
+        }
+
+        
     }
+    static void printArea(Area object) { System.out.println("Area: " + object.area()); }
+
+    static void printVolume(Volume object) { System.out.println("Volume: " + object.volume()); }
 
 
-    public void createCircle() {
-        double radius = radiusQuestion();
-        CIRCLE.setRadius(radius);
-        shapes.add(new Circle(CIRCLE.getRadius(), "Circle"));
-    }
 
-    public void createCube() {
-        double sides = sideQuestion();
-        CUBE.setSide(sides);
-        shapes.add(new Cube(CUBE.getSide(), "cube"));
-    }
-    public void createCylinder() {
-        double radius = radiusQuestion();
-        double height = heightQuestion();
-        CYLINDER.setRadius(radius);
-        CYLINDER.setHeight(height);
-        shapes.add(new Cylinder(CYLINDER.getRadius(), "Cylinder", CYLINDER.getHeight()));
-    }
-    public void createGlome() {
-        double radius = radiusQuestion();
-        GLOME.setRadius(radius);
-        shapes.add(new Glome(GLOME.getRadius(), "Glome"));
-    }
-    public void createSphere() {
-        double raidus = radiusQuestion();
-        SPHERE.setRadius(raidus);
-        shapes.add(new Sphere(SPHERE.getRadius(), "Sphere"));
-    }
-    public void createSquare() {
-        double sides = sideQuestion();
-        SQUARE.setSide(sides);
-        shapes.add(new Square(SQUARE.getSide(), "Square"));
-    }
-
-    public double radiusQuestion(){
-        System.out.println("Enter a raidus: ");
-        return KEYBOARD.nextDouble();
-    }
-
-    public double sideQuestion() {
-        System.out.println("Enter a number of Sides: ");
-        return KEYBOARD.nextDouble();
-    }
-    public double heightQuestion() {
-        System.out.println("Enter the height: ");
-        return KEYBOARD.nextDouble();
-    }
-    static void printArea(Area object) { System.out.println(object.area()); }
-
-    static void printVolume(Volume object) { System.out.println(object.volume()); }
 }
