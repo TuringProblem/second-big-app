@@ -26,7 +26,7 @@ public class Square extends Shape implements Area {
     @Override
     public void writeOutput() {
         super.writeOutput();
-        System.out.printf("Sides: %,.5f", getSide());
+        System.out.printf("Sides: %,.5f\n", getSide());
     }
 }
 

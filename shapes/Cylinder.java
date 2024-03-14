@@ -20,6 +20,6 @@ public class Cylinder extends Circle implements Volume {
     @Override
     public void writeOutput() {
         super.writeOutput();
-        System.out.printf("Height: %,5f", getHeight());
+        System.out.printf("Height: %,5f\n", getHeight());
     }
 }
