@@ -2,85 +2,101 @@ package src.main;
 import shapes.*;
 import src.Area;
 import src.Volume;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Supplier;
 public class MainLogic {
-    ArrayList<Shape> shapes = new ArrayList<>();
-    Circle CIRCLE = new Circle();
-    Cube CUBE = new Cube();
-    Cylinder CYLINDER = new Cylinder();
-    Glome GLOME = new Glome();
-    Sphere SPHERE = new Sphere();
-    Square SQUARE = new Square();
-
     Scanner KEYBOARD = new Scanner(System.in);
 
+    /**
+     * @see ShapeType -> enum for static dimensions
+     */
+    public enum ShapeType{
+        TWO_DIMENSIONAL("Two Dimensional"),
+        THREE_DIMENSIONAL("Three Dimensional");
+        final String dimensions;
+        ShapeType(String dimensions){this.dimensions = dimensions;}
+    }
+    private final ShapeType twoD = ShapeType.TWO_DIMENSIONAL;
+    private final ShapeType threeD = ShapeType.THREE_DIMENSIONAL;
 
+    public void printDimenstion(boolean isTwoD) {
+        if (isTwoD) {
+            System.out.printf("Dimension: %s", twoD.dimensions);
+        } else {
+            System.out.printf("Dimension: %s", threeD.dimensions);
+        }
+    }
+    /**
+     * Using Supplier<T> interface -> functional interface from java.util.function library
+     * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Java 8 Api</a>a
+     * Only returns an output, not an input
+     */
     public void logic() {
-        final String PROMPT = "Choose a shape: \nie [Circle, Cube, Cylinder, Glome, Shape, Sphere, Square]\nEnter a Shape: ";
 
+        Supplier<Double> radiusPrompt = () -> {
+            System.out.println("Enter a Radius: ");
+            return KEYBOARD.nextDouble();
+        };
+        Supplier<Double> heightPrompt = () -> {
+            System.out.println("Enter a Height: ");
+            return KEYBOARD.nextDouble();
+        };
+        Supplier<Double> sidePrompt = () -> {
+            System.out.println("Enter a side: ");
+            return KEYBOARD.nextDouble();
+        };
+
+        final String PROMPT = "Choose a shape: \nie [Circle, Cube, Cylinder, Glome, Shape, Sphere, Square]\nEnter a Shape: ";
         System.out.println(PROMPT);
         String response = KEYBOARD.nextLine().toLowerCase();
         switch (response) {
-            case "circle" ->createCircle();
-            case "cube" -> createCube();
-            case "cynlinder" -> createCylinder();
-            case "glome" -> createGlome();
-            case "sphere" -> createSphere();
-            case "square" -> createSquare();
+            case "circle" -> {
+                double userRadius = radiusPrompt.get();
+                Circle myCircle = new Circle(userRadius, "Circle");
+                myCircle.writeOutput();
+                printArea(myCircle);
+                printDimenstion(true);
             }
-        System.out.println(shapes.getFirst());
-    }
+            case "cube" -> {
+                double userShape = sidePrompt.get();
+                Cube myCube = new Cube(userShape, "Cube");
+                myCube.writeOutput();
+                printVolume(myCube);
+                printDimenstion(false);
 
+            }
+            case "cylinder" -> {
+                double userHeight = heightPrompt.get();
+                double userRadius = radiusPrompt.get();
+                Cylinder myCylinder = new Cylinder(userRadius, "Cylinder", userHeight);
+                myCylinder.writeOutput();
+                printVolume(myCylinder);
+                printDimenstion(false);
+            }
+            case "glome" -> {
+                double userRadius = radiusPrompt.get();
+                Glome myGlome = new Glome(userRadius, "Glome");
+                myGlome.writeOutput();
+                printVolume(myGlome);
+                printDimenstion(false);
 
-    public void createCircle() {
-        double radius = radiusQuestion();
-        CIRCLE.setRadius(radius);
-        shapes.add(new Circle(CIRCLE.getRadius(), "Circle"));
+            }
+            case "sphere" -> {
+                double userRadius = radiusPrompt.get();
+                Sphere mySphere = new Sphere(userRadius, "Sphere");
+                mySphere.writeOutput();
+                printVolume(mySphere);
+                printDimenstion(false);
+            }
+            case "square" -> {
+                double userSide = sidePrompt.get();
+                Square mySquare = new Square(userSide, "Square");
+                mySquare.writeOutput();
+                printArea(mySquare);
+                printDimenstion(true);
+            }
+        }
     }
-
-    public void createCube() {
-        double sides = sideQuestion();
-        CUBE.setSide(sides);
-        shapes.add(new Cube(CUBE.getSide(), "cube"));
-    }
-    public void createCylinder() {
-        double radius = radiusQuestion();
-        double height = heightQuestion();
-        CYLINDER.setRadius(radius);
-        CYLINDER.setHeight(height);
-        shapes.add(new Cylinder(CYLINDER.getRadius(), "Cylinder", CYLINDER.getHeight()));
-    }
-    public void createGlome() {
-        double radius = radiusQuestion();
-        GLOME.setRadius(radius);
-        shapes.add(new Glome(GLOME.getRadius(), "Glome"));
-    }
-    public void createSphere() {
-        double raidus = radiusQuestion();
-        SPHERE.setRadius(raidus);
-        shapes.add(new Sphere(SPHERE.getRadius(), "Sphere"));
-    }
-    public void createSquare() {
-        double sides = sideQuestion();
-        SQUARE.setSide(sides);
-        shapes.add(new Square(SQUARE.getSide(), "Square"));
-    }
-
-    public double radiusQuestion(){
-        System.out.println("Enter a raidus: ");
-        return KEYBOARD.nextDouble();
-    }
-
-    public double sideQuestion() {
-        System.out.println("Enter a number of Sides: ");
-        return KEYBOARD.nextDouble();
-    }
-    public double heightQuestion() {
-        System.out.println("Enter the height: ");
-        return KEYBOARD.nextDouble();
-    }
-    static void printArea(Area object) { System.out.println(object.area()); }
-
-    static void printVolume(Volume object) { System.out.println(object.volume()); }
+    static void printArea(Area object) { System.out.printf("Area: %,5f\n", object.area()); }
+    static void printVolume(Volume object) { System.out.printf("Volume: %,5f\n",object.volume()); }
 }

@@ -13,7 +13,7 @@ public class Square extends Shape implements Area {
     }
     public Square(double sides, String name) {
         super(name);
-        side = sides;
+        setSide(sides);
     }
     public void setSide(double side) {this.side = side; }
     public double getSide() { return side; }
@@ -22,5 +22,11 @@ public class Square extends Shape implements Area {
      */
     @Override
     public double area() { return Math.pow(getSide(), 2.0); }
+
+    @Override
+    public void writeOutput() {
+        super.writeOutput();
+        System.out.printf("Sides: %,.5f\n", getSide());
+    }
 }
 

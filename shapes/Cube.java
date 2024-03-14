@@ -7,6 +7,8 @@ public class Cube extends Square implements Volume {
     public Cube(double shape, String name) { super(shape, name); }
     @Override
     public double volume() { return Math.pow(getSide(), 3); }
+    @Override
+    public void writeOutput() { super.writeOutput(); }
 }
 
 
