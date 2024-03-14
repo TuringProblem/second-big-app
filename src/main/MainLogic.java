@@ -4,6 +4,12 @@ import src.Area;
 import src.Volume;
 import java.util.Scanner;
 import java.util.function.Supplier;
+
+/**
+ * @author Override
+ * @since 03/14/2022 @00:33
+ * @see <a href="Github.com/TuringProblem">GitHub Profile</a>
+ */
 public class MainLogic {
     Scanner KEYBOARD = new Scanner(System.in);
 
@@ -16,8 +22,8 @@ public class MainLogic {
         final String dimensions;
         ShapeType(String dimensions){this.dimensions = dimensions;}
     }
-    private final ShapeType twoD = ShapeType.TWO_DIMENSIONAL;
-    private final ShapeType threeD = ShapeType.THREE_DIMENSIONAL;
+    private static final ShapeType twoD = ShapeType.TWO_DIMENSIONAL;
+    private static final ShapeType threeD = ShapeType.THREE_DIMENSIONAL;
 
     public void printDimenstion(boolean isTwoD) {
         if (isTwoD) {
