@@ -15,13 +15,32 @@ public class Square extends Shape implements Area {
         super(name);
         setSide(sides);
     }
-    public void setSide(double side) {this.side = side; }
-    public double getSide() { return side; }
+
     /**
-     * Area of a Square is getSide()^2 power.
+     * @param side -> Sets the side value for:
+     * @see Square
      */
+
+    public void setSide(double side) {this.side = side; }
+
+    /**
+     * @return -> Gets the side value for:
+     * @see Square
+     */
+
+    public double getSide() { return side; }
+
+    /**
+     * Calculates -> Area of the:
+     * @see Square
+     */
+
     @Override
     public double area() { return Math.pow(getSide(), 2.0); }
+
+    /**
+     *
+     */
 
     @Override
     public void writeOutput() {

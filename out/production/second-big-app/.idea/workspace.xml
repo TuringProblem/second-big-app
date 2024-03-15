@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47fd3b8f-a8d3-4e58-ae69-d91ec3f33730" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MainLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainLogic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +39,7 @@
     "Application.MainProject.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "pc-branch",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "corretto-21",
     "kotlin-language-version-configured": "true",
@@ -80,8 +81,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-corretto-21.0.1-f644763e9732-eed86825" />
-        <option value="jdk-21.0.2-corretto-21.0.2-f644763e9732-54352fe9" />
+        <option value="jdk-20.0.2-corretto-20.0.2.1-4caba194b151-d89c1816" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-322ed176" />
       </set>
     </attachedChunks>
   </component>
@@ -104,7 +105,8 @@
       <workItem from="1710045829331" duration="113000" />
       <workItem from="1710045955109" duration="108000" />
       <workItem from="1710046074969" duration="900000" />
-      <workItem from="1710361337368" duration="19238000" />
+      <workItem from="1710361337368" duration="21375000" />
+      <workItem from="1710429169905" duration="1706000" />
     </task>
     <servers />
   </component>
