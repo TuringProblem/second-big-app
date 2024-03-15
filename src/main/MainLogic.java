@@ -4,13 +4,11 @@ import src.Area;
 import src.Volume;
 import java.util.Scanner;
 import java.util.function.Supplier;
-
 /**
  * @author Override
  * @since 03/14/2022 @00:33
  * @see <a href="Github.com/TuringProblem">GitHub Profile</a>
  */
-
 public class MainLogic {
     Scanner KEYBOARD = new Scanner(System.in);
 
@@ -18,16 +16,19 @@ public class MainLogic {
      * @see ShapeType -> enum for static dimensions if the object is 2D -> output "Two Dimensional" : object is 3D -> "Three Dimensional
      * Using Enum due to these objects never needing to change.
      */
+
     public enum ShapeType{
         TWO_DIMENSIONAL("Two Dimensional"),
         THREE_DIMENSIONAL("Three Dimensional");
         final String dimensions;
         ShapeType(String dimensions){this.dimensions = dimensions;}
     }
+
     /**
      * Static variables for the enum -> twoD == twoDimensional && threeD == threeDimensional
      * @see ShapeType -> for more context behind variable
      */
+
     private static final ShapeType twoD = ShapeType.TWO_DIMENSIONAL;
     private static final ShapeType threeD = ShapeType.THREE_DIMENSIONAL;
 
@@ -35,6 +36,7 @@ public class MainLogic {
      * Boolean checker for if the value
      * @param isTwoD -> if true, print 2D, else it's 3d so print's 3D
      */
+
     public void printDimension(boolean isTwoD) {
         if (isTwoD) {
             System.out.printf("Dimension: %s", twoD.dimensions);
@@ -42,6 +44,7 @@ public class MainLogic {
             System.out.printf("Dimension: %s", threeD.dimensions);
         }
     }
+
     /**
      * Using Supplier<T> interface -> functional interface from java.util.function library
      * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html">Java 8 Api</a>a

@@ -28,7 +28,7 @@ abstract public class Shape {
 
     /**
      * @see Shape -> Gets the name that has been set
-     * @return setName() value
+     * @return -> Name of the shape
      */
 
     public String getName() { return name; }

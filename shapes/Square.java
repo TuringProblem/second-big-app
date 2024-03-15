@@ -6,7 +6,18 @@ import src.Area;
  * @see <a href="https://github.com/TuringProblem">GitHub Profile</a>
  */
 public class Square extends Shape implements Area {
+
+    /**
+     * @see Square -> A Square has a sides, which is a double value.
+     */
+
     private double side;
+
+    /**
+     * @see Square -> Default and set Constructors
+     * @see Shape -> for name (The super class)
+     */
+
     public Square() {
         super();
         side = 0;
@@ -39,7 +50,8 @@ public class Square extends Shape implements Area {
     public double area() { return Math.pow(getSide(), 2.0); }
 
     /**
-     *
+     * Prints -> the output for name, and sides
+     * @see Shape -> for parent writeOutput()
      */
 
     @Override

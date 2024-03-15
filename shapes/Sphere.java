@@ -1,17 +1,15 @@
 package shapes;
 import src.Volume;
-
 /**
  * @author Override
  * @since 03/03/2024 @15:33
  * @see <a href="Github.com/TuringProblem">GitHub Profile</a>
  */
-
 public class Sphere extends Circle implements Volume {
 
     /**
      * @see Sphere -> default, and set Constructors for the "Sphere" shape
-     * @see Circle -> Super class that Sphere extends from -- allowing us to grab the radius from parent class
+     * @see Circle ->  for name and radius (The parent class)
      */
 
     public Sphere() { super(); }

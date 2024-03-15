@@ -1,6 +1,10 @@
 package shapes;
 import src.Area;
-
+/**
+ * @author Override
+ * @since 03/03/2024 @15:33
+ * @see <a href="Github.com/TuringProblem">GitHub Profile</a>
+ */
 public class Circle extends Shape implements Area {
 
     /**
@@ -11,8 +15,7 @@ public class Circle extends Shape implements Area {
 
     /**
      * @see Circle -> default and set constructors for "Circle" Shape
-     * @see Shape -> Super class that Circle extends from --
-     * -> allowing us to grab the name of the shape from parent class
+     * @see Shape -> for name (The super class)
      */
 
     public Circle() {
@@ -34,6 +37,7 @@ public class Circle extends Shape implements Area {
     /**
      * @return -> gets the radius value for:
      * @see Circle
+     *
      */
 
     public double getRadius() { return radius; }
